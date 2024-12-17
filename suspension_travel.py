@@ -33,6 +33,9 @@ def calculate_travel_dist_time(df):
     df['Distance_left'] = 9.36 * df['Front left suspension'] - 12.2 # front left suspension.
     df['Distance_right'] = 9.92 * df['Front right suspension'] - 14.2 # front right suspension.
     df['Time (seconds)'] = df['Interval'] / 1000 # interval in ms is converted in seconds.
+    return df
+
+df = calculate_travel_dist_time(df)
 
 # plots the data
 df.plot.scatter(x= 'Time (seconds)', y='Distance_right', color = 'red')
