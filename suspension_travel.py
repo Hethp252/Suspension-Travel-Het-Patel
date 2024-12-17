@@ -1,7 +1,10 @@
 # analog 1 = front left suspension
 # analog 2 = front right suspension
 
-# (in the equations) x=volts
+# right suspension equation: 9.92x -14.2= Distance
+# left suspension equation: 9.36x-12.2= Distance
+
+# (in the equations above) x=volts
 
 # x = "interval"
 # y = "suspension travel (distance in inches)"
@@ -36,6 +39,7 @@ def calculate_travel_dist_time(df):
     df['Time (seconds)'] = df['Interval'] / 1000 # interval in ms is converted in seconds.
     return df
 
+# Calling the function
 df = calculate_travel_dist_time(df)
 
 # Plots the data in the correct order.
